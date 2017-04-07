@@ -1,0 +1,99 @@
+body {
+    background-color: lightblue;
+}
+
+h1 {
+    background-color: lightblue;
+    color: green;
+}
+
+
+
+.titleSpanClass {
+    align-content: center;
+}
+
+.containerClass {
+    position: relative;
+    background-color: lightgreen;
+    width: 300px;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.formClass {
+    background-color: lightgreen;
+    width: 300px;
+    height: 180px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.topLabelClass {
+    margin-left: 10px;
+    
+}
+
+.labelClass {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.resultLabelClass {
+    float: right;
+    margin-right: 10px;
+}
+
+.resultTitleClass {
+    margin-left: 10px;
+    text-decoration: underline;
+}
+
+.inputTextClass {
+    display: inline-block;
+    float: right;
+    margin-right: 10px;
+    height: 15px
+}
+
+.selectorClass{
+    display: inline-block;
+    float: right;
+    margin-top: 0px;
+    margin-right: 10px;
+    width: 120px;
+}
+
+.inputCommentClass {
+    width: 280px;
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.submitClass {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    float: right;
+    clear: right;
+}
+
+.resultCommentClass {
+    width: 280px;
+    height: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: lightslategray;
+}
+
+.goBackButtonClass {
+    position: absolute;
+    bottom: 5;
+    right: 5;
+}
+
+
+

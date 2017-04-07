@@ -1,0 +1,32 @@
+<html>
+    <head>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+    <!-- <span id="titleSpan" class"titleSpanClass">Survey Form</span>-->
+    <br>
+    <!-- <div id="container" class="containerClass"> -->
+        <!--<div id="formContainer" class="formContainerClass">-->
+            <form action='/result' method='post' class="formClass">
+                <br>
+                <label id="nameLabel" class="labelClass">Your Name:</label> <input type='text' name='name' class="inputTextClass"><br>
+                <label id="locationLabel"class="labelClass" >Dojo Location:</label> 
+                <select name='dojoLocationSelector' class="selectorClass">
+                    <% for (var i = 0; i < arrLoc.length; i++) { %>
+                        <option class="optionClass" value="<%-arrLoc[i]%>" ><%= arrLoc[i] %></option>
+                    <% } %>
+                    </select><br>
+                <label id="langLabel" class="labelClass"> Favorite Language:</label> 
+                <select name="codingLanguageSelector" class="selectorClass">
+                    <% for (var i = 0; i < arrLang.length; i++) { %>
+                        <option class="optionClass" value="<%=arrLang[i]%>" ><%=arrLang[i] %></option>
+                    <% } %>
+                    </select><br>
+                <label id="commentLabel" class="labelClass">Comment (Optional):</label><br>
+                <input type="text" name="comment" class="inputCommentClass"><br><br>
+                <input type='submit' value='SUBMIT' class="submitClass">
+            </form>
+        <!-- </div> -->
+    <!-- </div> -->
+    </body>
+</html>
