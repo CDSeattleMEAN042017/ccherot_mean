@@ -23,6 +23,7 @@ h1 {
 }
 
 .formClass {
+    position: relative;
     background-color: lightgreen;
     width: 300px;
     height: 180px;
@@ -74,11 +75,9 @@ h1 {
 }
 
 .submitClass {
-    display: inline-block;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    float: right;
-    clear: right;
+    position: absolute;
+    bottom: 5;
+    right: 5;
 }
 
 .resultCommentClass {

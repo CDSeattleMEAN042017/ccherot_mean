@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "./static")));
 
 //create a reference to jquery for client-side use
-app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'));
+app.use(express.static(path.join(__dirname, "./node_modules")));
 
 // setting up ejs and our views folder
 app.set('views', path.join(__dirname, './views'));

@@ -1,0 +1,208 @@
+<html>
+    <head>
+        <title>The Dojo Message Board</title>
+        <!-- <link href="style.css" rel="stylesheet" type="text/css"> -->
+        <style>
+            body {
+                background-color: lightblue;
+            }
+
+            h1 {
+                background-color: lightblue;
+                color: green;
+            }
+
+            .titleDivClass {
+                background-color: lightblue;
+                text-align: left;
+
+            }
+
+            .titleLabelClass {
+                margin-left: 10px;
+            }
+
+            .containerClass {
+                position: relative;
+                background-color: lightgreen;
+                width: 300px;
+                height: 150px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .postFormClass {
+                position: relative;
+                background-color: lightcoral;
+                width: 800;
+                height: 180px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .commentFormClass {
+                position: relative;
+                background-color: lightsalmon;
+                width: 780px;
+                height: 200px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .commentContainerClass
+            {
+                position: relative;
+                background-color: lightcyan;
+                width: 780px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .postListClass {
+                position: relative;
+                background-color: lightgreen;
+                width: 800px;
+                /*height: 180px;*/
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .commentListClass {
+                position: relative;
+                background-color: lightgreen;
+                width: 300px;
+                /*height: 180px;*/
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .formLabelClass {
+                margin-left: 10px;
+                margin-top: 10px;
+            }
+
+            .postLabelClass{
+                margin-left: 20px;
+                margin-top: 10px;
+            }
+
+            .commentLabelClass {
+                float: left;
+                margin-left: 30px;
+            }
+
+            .commentNameInputClass
+            {
+                float: left;
+                margin-left: 30px;
+                width: 150px
+            }
+
+            .commentNameLabelClass {
+                float: left;
+                margin-left: 30px;
+                margin-top: 10px;
+            }
+
+            .commentMessageLabelClass {
+                float: left;
+                margin-left: 30px;
+            }
+
+            .commentNameClass {
+                float: left;
+                margin-left: 40px;
+                margin-top: 5px;
+            }
+
+            .commentMessageClass {
+                float: left;
+                margin-left: 40px;
+            }
+
+
+            .inputCommentTextAreaClass {
+                display: inline-block;
+                float: left;
+                margin-left: 30px;
+                margin-right: 10px;
+                height: 85px;
+                width: 740;
+            }
+            .postTitleClass {
+                margin-left: 10px;
+                text-decoration: underline;
+            }
+
+            .messageTextClass {
+                display: inline-block;
+                margin-left: 90;
+                width: 700;
+            }
+
+            .inputTextClass {
+                display: inline-block;
+                float: left;
+                margin-left: 10px;
+                height: 15px
+            }
+
+            .inputTextAreaClass {
+                display: inline-block;
+                float: left;
+                margin-left: 10px;
+                height: 85px;
+                width: 780px;
+            }
+
+            .submitClass {
+                position: absolute;
+                bottom: 5;
+                right: 10px;
+            }
+
+
+            .commentSubmitClass {
+                position: absolute;
+                bottom: 5;
+                right: 10;
+            }
+
+
+
+
+        </style>
+    </head>
+    <body>
+        <div id="titleDiv" class="titleDivClass"><h1>The Dojo Message Board</h1><hr></div>
+        
+        <form action="/new_post"  method="post" id="postForm" class="postFormClass">
+            <label id="postNameLabel" class="formLabelClass">Name:</label><br>
+            <input name="name" type="text" class="inputTextClass"><br>
+            <label id="messageLabel" class="formLabelClass">Message:</label><br>
+            <textarea name="message" type="textarea" class="inputTextAreaClass"></textarea><br>
+            <input type='submit' value='Post Message' class="submitClass">
+        </form>
+        <div id="postListDiv" class="postListClass">
+            <!-- <label id="usersListTitle" class="labelClass">Users:</label><br>-->
+            <% for (i = 0; i < arrPosts.length; i++) { %>
+                <label id="postNameLabel" class="postLabelClass">Name: </label><label id="post<%=i%>" class="labelClass"><%=arrPosts[i].name%></label><br>
+                <label id="messageLabel" class="postLabelClass">Message: </label><label id="message<%=i%>" class="messageTextClass"><%=arrPosts[i].text%></label><br>
+                <!-- now we loop throug the comments of this post -->
+                <% for (j = 0; j < arrPosts[i].comments.length; j++) { %>
+                    <label id="commentNameLabel" class="commentNameLabelClass">Name:     <%=arrPosts[i].comments[j].name%></label><br><br>
+                    <label id="commentMessageLabel" class="commentMessageLabelClass">Message:  </label><label id="commentMessage" class="commentMessageClass"><%=arrPosts[i].comments[j].text%></label><br>
+                <% } %>
+                <form action='/new_comment' id="commentForm" method='post' class="commentFormClass">
+                    <br>
+                    <label id="nameLabel" class="commentLabelClass">Name:</label><br> 
+                    <input type='text' name='name' class="commentNameInputClass"><br>
+                    <label id="commentLabel"class="commentLabelClass" >Comment:</label><br> 
+                    <textarea type='textarea' name='text' class="inputCommentTextAreaClass"></textarea><br>
+                    <input type="hidden" name="_post" value="<%=arrPosts[i].id%>" />
+                    <input type='submit' value='Post Comment' class="submitClass">
+                </form>
+            <% } %>
+        </div>
+    </body>
+    </html>

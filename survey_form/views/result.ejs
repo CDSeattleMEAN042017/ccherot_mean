@@ -1,17 +1,22 @@
 <html>
     <head>
     <link href="style.css" rel="stylesheet" type="text/css">
-    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-  crossorigin="anonymous"></script>
-    <script 
+    <script src="jquery/dist/jquery.js"></script>
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script> -->
+    <script> 
+
         $(document).ready(function () {
-        console.log("result page: document is now ready")
-        $("#goBackButton").click(function (e)
-        {
-            console.log("goBackButton clicked")
-            window.locaton.href = "/index"
+            console.log("result page: document is now ready")
+            $("button").click(function (e)
+            {
+                console.log("goBackButton clicked")
+                window.location.href = "/"
+            })
         })
-})></script>
+
+    </script>
     </head>
     <body>
     <div id="resultsContainer" class="containerClass">
