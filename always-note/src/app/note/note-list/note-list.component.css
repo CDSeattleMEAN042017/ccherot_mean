@@ -1,0 +1,8 @@
+table, th, td {
+    border: solid black 1px;
+}
+
+button {
+    background-color: lightgray;
+
+}

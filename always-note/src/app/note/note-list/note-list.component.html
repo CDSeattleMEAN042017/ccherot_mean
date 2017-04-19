@@ -1,0 +1,20 @@
+<div>
+  <h3>note-list works!</h3>
+    <table>
+    <th>Id</th>
+    <th>Note</th>
+    <th>Date Created</th>
+    <th>Date Updated</th>
+    <th>Actions</th>
+    <tr *ngFor="let note of notes">
+      <td>{{note.id}}</td>
+      <td>{{note.message}}</td>
+      <td>{{note.dateCreated | date:'shortDate'}}</td>
+      <td>{{note.dateUpdated | date:'shortDate'}}</td>
+      <td><button (click)="onClickDelete(note)" id="deleteButton" class="deleteButtonClass">Delete</button>
+        <button (click)="onClickEdit(note)" id="editButton" class="editButtonClass">Edit</button>
+       </td>
+    </tr>
+  </table>
+
+</div>

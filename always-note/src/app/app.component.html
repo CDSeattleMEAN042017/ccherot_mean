@@ -1,0 +1,7 @@
+<div>
+  <h1>{{title}}</h1>
+  <app-note-new></app-note-new>
+  <app-note-list></app-note-list>
+  {{ editNotes | json }}
+  <app-note-edit *ngFor="let note of editNotes" [note]="note"></app-note-edit>
+</div>

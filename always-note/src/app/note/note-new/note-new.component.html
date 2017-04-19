@@ -1,0 +1,8 @@
+<div>
+  <h3>Create a new note</h3>
+  <form (submit)="onSubmit(formData)" method="post" #formData="ngForm">
+    <label id="noteLabel" class="noteLabelClass">Note:</label>
+    <input [(ngModel)]="newNote.message" name="message" type="text" id="inputMessage" class="inputMessageClass">
+    <input type="submit" id="submitButton" class="" name="Submit">
+  </form> 
+</div>

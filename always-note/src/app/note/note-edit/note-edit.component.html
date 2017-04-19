@@ -1,0 +1,10 @@
+<div>
+  <h3>Edit note</h3>
+  {{ editText | json }}
+  {{ note | json}}
+  <form (submit)="onSubmit(formData)" method="post" #formData="ngForm">
+    <input [(ngModel)]="editText" name="message" type="text" id="inputMessage" class="inputMessageClass">
+    <input type="submit" id="submitButton" class="" name="Submit"><br>
+    <input (click)="onClickCancel()" type="submit" value="Cancel" id="cancelButton" class="cancelButton" name="Cancel">
+  </form> 
+</div>
