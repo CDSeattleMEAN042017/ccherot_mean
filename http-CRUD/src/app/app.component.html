@@ -1,0 +1,11 @@
+<div>
+  <h1>{{title}}</h1>
+  <hr>
+  <app-widget-new></app-widget-new>
+  <hr>
+  <app-widget-list></app-widget-list>
+  <hr>
+  {{ editList | json }}
+  <!-- use *ngFor to iterate through the editList of widgets in the widget service -->
+  <app-widget-edit *ngFor="let widget of editList" [widget]="widget" (deleteEvent)="onDeleteWidget($event)"></app-widget-edit>
+</div>

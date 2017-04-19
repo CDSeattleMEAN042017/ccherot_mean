@@ -1,0 +1,32 @@
+<div>
+  <h2>Add a New Widget</h2>
+  <form #formData='ngForm' (submit)='onSubmit(formData)' name="newWidgetForm" id="newWidgetForm">
+    <label id='titleLabel' class='titleLabelClass' name="titleLabel">Title: </label> 
+    <input 
+      type='text' 
+      id='formTitle'
+      name="formTitle"
+      class='formTitleClass'
+      [(ngModel)]="newWidget.title"
+      required
+      minlength="4"
+      maxlength="24"><br>
+    <label id='textLabel' class='textLabelClass'>Text: </label>
+    <input
+      type='text'
+      id='formText'
+      name="formText"
+      class='formTextClass'
+      [(ngModel)]="newWidget.text"
+      required
+      minlength="4"
+      maxlength="48">
+    <input
+      type="submit"
+      id='formSumbit'
+      name="formSubmit"
+      class='formSubmitClass'
+      name='Create'
+      [disabled]='!formData.form.valid'>
+  </form>
+</div>

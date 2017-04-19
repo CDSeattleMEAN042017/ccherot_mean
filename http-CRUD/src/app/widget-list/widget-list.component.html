@@ -1,0 +1,15 @@
+
+  <h2>This is a list of widgets, yo!</h2>
+    arrWidgets: {{ arrWidgets$ | json  }}
+    <br>
+    <br>
+    _widgetService.widgets: {{ _widgetService.widgets | json }}
+    <!-- {{ _widgetService.widgets | json }} -->
+    <ul>
+      <li *ngFor="let widget of _widgetService.widgets"><label id="titleLabel" class="titleLabelClass" name="titleLabel">{{widget.title}}:</label><br>
+        <label id="textLabel" class="textLabelClass" name="textLabel">{{widget.text}}</label><br>
+        <button (click)="onClickDelete(widget)" id="deleteButton" class="deleteButtonClass" name="deleteButton">Delete</button>
+        <button (click)="onClickEdit(widget)" id="editButton" class="editButtonClass" name="editButton">Edit</button>
+      </li>
+    </ul>
+
