@@ -1,0 +1,33 @@
+<div>
+  <p>Edit Widget</p>
+  <!-- create a form for editing the widget -->
+  <form #formData="ngForm" (submit)="onSubmit(formData)">
+    <label id="titleLabel" class="titleLabelClass">Title:</label>
+    <input
+      type="text"
+      id="formTitle"
+      class="formTitleClass"
+      [(ngModel)]="widgetTitle">
+      <br>
+      <label id="textLabel" class="textLabelClass">Text:</label>
+      <input 
+      type="text"
+      id="formText"
+      class="formTextClass"
+      [(ngModel)]="widgetText">
+      <br>
+      <input 
+        (click)="onClickCancel()"
+        type="submit"
+        value="cancel"
+        id="cancelButton"
+        class="cancelButtonClass"
+        name="cancel">
+      <input 
+        type="submit"
+        id="submitButton"
+        class="submitButtonClass"
+        name="Submit"
+        value="Submit">
+    </form>
+</div>
